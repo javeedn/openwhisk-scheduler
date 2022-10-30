@@ -84,6 +84,7 @@ public class BaseScheduler extends Scheduler {
     private void send(@Nonnull final IProducer producer,
                       @Nonnull final Queue<? extends ISchedulable> schedulables) {
         final long schedulingTermination = Instant.now().toEpochMilli();
+        LOG.info("******************************************************");
         for (final ISchedulable schedulable : schedulables) {
             // if activation has not target invoker, abort its processing
             if (schedulable.getTargetInvoker() == null) {
