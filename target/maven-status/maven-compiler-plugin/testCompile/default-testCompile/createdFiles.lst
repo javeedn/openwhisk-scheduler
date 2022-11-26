@@ -1,6 +1,7 @@
 it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/ActivationTest$3.class
 it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/ActivationKafkaConsumerMock$1.class
 it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/HealthKafkaConsumerMock$1.class
+it/uniroma2/faas/openwhisk/scheduler/scheduler/policy/WeightedShortestJobFirstTest.class
 it/uniroma2/faas/openwhisk/scheduler/util/LineReader.class
 it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/HealthKafkaConsumerMock.class
 it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/CompletionKafkaConsumerMock$3.class

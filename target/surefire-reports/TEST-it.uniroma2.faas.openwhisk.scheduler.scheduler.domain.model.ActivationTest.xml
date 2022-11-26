@@ -1,63 +1,248 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0" errors="0" skipped="0">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.091" tests="11" errors="1" skipped="0" failures="1">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="19"/>
-    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/19/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler"/>
-    <property name="java.vm.vendor" value="Homebrew"/>
-    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="guice.disable.misplaced.annotation.check" value="true"/>
-    <property name="path.separator" value=":"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="user.country" value="GB"/>
-    <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
-    <property name="java.runtime.version" value="19"/>
-    <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/6p/lq37q6d91vj67z32z2nyl0jcttfwcy/T/"/>
-    <property name="line.separator" value="
-"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="stderr.encoding" value="UTF-8"/>
-    <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.8.6/libexec/bin/m2.conf"/>
-    <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="stdout.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/njaveed/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="maven.conf" value="/usr/local/Cellar/maven/3.8.6/libexec/conf"/>
-    <property name="jdk.debug" value="release"/>
-    <property name="java.class.version" value="63.0"/>
-    <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="12.5"/>
-    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.8.6/libexec/lib/jansi-native"/>
-    <property name="user.home" value="/Users/njaveed"/>
-    <property name="user.timezone" value="Asia/Kolkata"/>
-    <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="19"/>
-    <property name="user.name" value="njaveed"/>
-    <property name="java.class.path" value="/usr/local/Cellar/maven/3.8.6/libexec/boot/plexus-classworlds-2.6.0.jar"/>
-    <property name="log4j2.formatMsgNoLookups" value="true"/>
-    <property name="java.vm.specification.version" value="19"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/test-classes:/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/classes:/Users/njaveed/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/Users/njaveed/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/Users/njaveed/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:/Users/njaveed/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-launcher/1.4.0/junit-platform-launcher-1.4.0.jar:/Users/njaveed/.m2/repository/org/apache/maven/maven-model/3.6.3/maven-model-3.6.3.jar:/Users/njaveed/.m2/repository/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.jar:/Users/njaveed/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar:/Users/njaveed/.m2/repository/org/apache/logging/log4j/log4j-core/2.12.1/log4j-core-2.12.1.jar:/Users/njaveed/.m2/repository/info/picocli/picocli/4.6.1/picocli-4.6.1.jar:/Users/njaveed/.m2/repository/com/google/guava/guava/28.1-jre/guava-28.1-jre.jar:/Users/njaveed/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/njaveed/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/njaveed/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/njaveed/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/Users/njaveed/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/Users/njaveed/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/njaveed/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.18/animal-sniffer-annotations-1.18.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.1/jackson-databind-2.12.1.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.1/jackson-annotations-2.12.1.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.1/jackson-core-2.12.1.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-log4j-appender/2.7.0/kafka-log4j-appender-2.7.0.jar:/Users/njaveed/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar:/Users/njaveed/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/njaveed/.m2/repository/org/apache/kafka/connect-api/2.7.0/connect-api-2.7.0.jar:/Users/njaveed/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/njaveed/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-clients/2.7.0/kafka-clients-2.7.0.jar:/Users/njaveed/.m2/repository/com/github/luben/zstd-jni/1.4.5-6/zstd-jni-1.4.5-6.jar:/Users/njaveed/.m2/repository/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar:/Users/njaveed/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.7/snappy-java-1.1.7.7.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-streams/2.7.0/kafka-streams-2.7.0.jar:/Users/njaveed/.m2/repository/org/apache/kafka/connect-json/2.7.0/connect-json-2.7.0.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.5/jackson-datatype-jdk8-2.10.5.jar:/Users/njaveed/.m2/repository/org/rocksdb/rocksdbjni/5.18.4/rocksdbjni-5.18.4.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
-    <property name="java.home" value="/usr/local/Cellar/openjdk/19/libexec/openjdk.jdk/Contents/Home"/>
-    <property name="apple.awt.application.name" value="Launcher"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="log4j2.formatMsgNoLookups" value="true"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="org.apache.logging.log4j.assignedSequences" value="15121"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="19"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/19.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/surefire/surefirebooter-20221126235243166_3.jar /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/surefire 2022-11-26T23-52-42_650-jvmRun1 surefire-20221126235243166_1tmp surefire_0-20221126235243166_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/test-classes:/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/classes:/Users/njaveed/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.4.0/junit-jupiter-engine-5.4.0.jar:/Users/njaveed/.m2/repository/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-engine/1.4.0/junit-platform-engine-1.4.0.jar:/Users/njaveed/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.4.0/junit-jupiter-api-5.4.0.jar:/Users/njaveed/.m2/repository/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-commons/1.4.0/junit-platform-commons-1.4.0.jar:/Users/njaveed/.m2/repository/org/junit/platform/junit-platform-launcher/1.4.0/junit-platform-launcher-1.4.0.jar:/Users/njaveed/.m2/repository/org/apache/maven/maven-model/3.6.3/maven-model-3.6.3.jar:/Users/njaveed/.m2/repository/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.jar:/Users/njaveed/.m2/repository/org/apache/logging/log4j/log4j-api/2.12.1/log4j-api-2.12.1.jar:/Users/njaveed/.m2/repository/org/apache/logging/log4j/log4j-core/2.12.1/log4j-core-2.12.1.jar:/Users/njaveed/.m2/repository/info/picocli/picocli/4.6.1/picocli-4.6.1.jar:/Users/njaveed/.m2/repository/com/google/guava/guava/28.1-jre/guava-28.1-jre.jar:/Users/njaveed/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/Users/njaveed/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/njaveed/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/njaveed/.m2/repository/org/checkerframework/checker-qual/2.8.1/checker-qual-2.8.1.jar:/Users/njaveed/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/Users/njaveed/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/Users/njaveed/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.18/animal-sniffer-annotations-1.18.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.1/jackson-databind-2.12.1.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.1/jackson-annotations-2.12.1.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.1/jackson-core-2.12.1.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-log4j-appender/2.7.0/kafka-log4j-appender-2.7.0.jar:/Users/njaveed/.m2/repository/org/slf4j/slf4j-log4j12/1.7.30/slf4j-log4j12-1.7.30.jar:/Users/njaveed/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/njaveed/.m2/repository/org/apache/kafka/connect-api/2.7.0/connect-api-2.7.0.jar:/Users/njaveed/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/njaveed/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-clients/2.7.0/kafka-clients-2.7.0.jar:/Users/njaveed/.m2/repository/com/github/luben/zstd-jni/1.4.5-6/zstd-jni-1.4.5-6.jar:/Users/njaveed/.m2/repository/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar:/Users/njaveed/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.7/snappy-java-1.1.7.7.jar:/Users/njaveed/.m2/repository/org/apache/kafka/kafka-streams/2.7.0/kafka-streams-2.7.0.jar:/Users/njaveed/.m2/repository/org/apache/kafka/connect-json/2.7.0/connect-json-2.7.0.jar:/Users/njaveed/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.10.5/jackson-datatype-jdk8-2.10.5.jar:/Users/njaveed/.m2/repository/org/rocksdb/rocksdbjni/5.18.4/rocksdbjni-5.18.4.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/njaveed"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="19"/>
-    <property name="native.encoding" value="UTF-8"/>
-    <property name="java.vendor" value="Homebrew"/>
-    <property name="maven.home" value="/usr/local/Cellar/maven/3.8.6/libexec"/>
+    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/19.0.1/libexec/openjdk.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
-    <property name="java.version.date" value="2022-09-20"/>
-    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="sun.cpu.endian" value="little"/>
+    <property name="basedir" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/target/surefire/surefirebooter-20221126235243166_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="19.0.1"/>
+    <property name="user.name" value="njaveed"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.6.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/njaveed/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/6p/lq37q6d91vj67z32z2nyl0jcttfwcy/T/"/>
+    <property name="java.version" value="19.0.1"/>
+    <property name="user.dir" value="/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/njaveed/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="19.0.1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="63.0"/>
   </properties>
+  <testcase name="whenActivationIsInvokerHealthTestAction_thenTrue" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.008"/>
+  <testcase name="whenActivationWithNewPriorityCreated_thenNewPriorityUpdatedCorrectly" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.005"/>
+  <testcase name="givenNewPriority_whenActivationSerialization_thenNoExceptionIsThrown" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.007">
+    <failure message="Unexpected exception thrown: java.lang.NullPointerException: Cannot invoke &quot;java.lang.Integer.intValue()&quot; because &quot;this.timePriority&quot; is null" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception thrown: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "this.timePriority" is null
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:83)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:54)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:37)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:2973)
+	at it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest.givenNewPriority_whenActivationSerialization_thenNoExceptionIsThrown(ActivationTest.java:267)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:628)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:117)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:184)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:180)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:127)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Integer.intValue()" because "this.timePriority" is null
+	at it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.Activation.with(Activation.java:363)
+	at it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest.lambda$givenNewPriority_whenActivationSerialization_thenNoExceptionIsThrown$9(ActivationTest.java:267)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:50)
+	... 56 more
+]]></failure>
+  </testcase>
+  <testcase name="whenActivationSerialization_thenNoExceptionIsThrown" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.011">
+    <system-out><![CDATA[{"action":{"name":"test_annotations","path":"guest","version":"0.0.1"},"activationId":"0b307ee5a1304a57b07ee5a1300a57e7","blocking":true,"cause":null,"content":{"key0":"value0","key1":"value1","key2":"value2"},"initArgs":[],"lockedArgs":null,"revision":"3-b3eeb1e516fd89366574c6051f024fa7","rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu",1609810319398],"user":{"authkey":{"api_key":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"},"limits":{},"namespace":{"name":"guest","uuid":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502"},"rights":["READ","PUT","DELETE","ACTIVATE"],"subject":"guest"}}
+{"action":{"name":"test_annotations","path":"guest","version":"0.0.1"},"activationId":"0b307ee5a1304a57b07ee5a1300a57e7","blocking":true,"cause":null,"content":null,"initArgs":[],"lockedArgs":null,"revision":"3-b3eeb1e516fd89366574c6051f024fa7","rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu",1609810319398],"user":{"authkey":{"api_key":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"},"limits":{},"namespace":{"name":"guest","uuid":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502"},"rights":["READ","PUT","DELETE","ACTIVATE"],"subject":"guest"}}
+{"action":{"name":"test_annotations","path":"guest","version":"0.0.1"},"activationId":"0b307ee5a1304a57b07ee5a1300a57e7","blocking":true,"cause":null,"content":{"key0":"value0","key1":"value1","key2":"value2","scheduler":{"target":"invoker2"}},"initArgs":[],"lockedArgs":null,"revision":"3-b3eeb1e516fd89366574c6051f024fa7","rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu",1609810319398],"user":{"authkey":{"api_key":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"},"limits":{},"namespace":{"name":"guest","uuid":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502"},"rights":["READ","PUT","DELETE","ACTIVATE"],"subject":"guest"}}
+{"action":{"name":"invokerHealthTestAction0","path":"whisk.system","version":"0.0.1"},"activationId":"c87969bfe8cf4c2bb969bfe8cf3c2bf0","blocking":false,"cause":null,"content":{"scheduler":{"target":"invoker0"}},"initArgs":[],"lockedArgs":{},"revision":null,"rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["sid_invokerHealth",1611036640735],"user":{"authkey":{"api_key":"979552f2-6935-40aa-9552-f2693520aa71:nH3V9vtkRxy8Hcw1a88xHd7jotqefxjH5jTf8v5e1qnWXerfR67vvZyrj3EX9vu4"},"limits":{},"namespace":{"name":"whisk.system","uuid":"979552f2-6935-40aa-9552-f2693520aa71"},"rights":[],"subject":"whisk.system"}}
+{"action":{"name":"hello_py","path":"guest","version":"0.0.1"},"activationId":"1b319ed429234155b19ed42923a155cf","blocking":true,"cause":null,"content":{"kTest":"vTest","scheduler":{"target":"invoker0","priority":3}},"initArgs":[],"lockedArgs":{},"revision":"1-ff07dcb3291545090f86e9fc1a01b5bf","rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["4K6K9Uoz09O5ut42VEiFI9zrOAiJX8oq",1611192819095],"user":{"authkey":{"api_key":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"},"limits":{},"namespace":{"name":"guest","uuid":"23bc46b1-71f6-4ed5-8c54-816aa4f8c502"},"rights":["READ","PUT","DELETE","ACTIVATE"],"subject":"guest"}}
+]]></system-out>
+  </testcase>
+  <testcase name="givenCompositionActivation_thenActivationRecordDeserializedCorrectly" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.007"/>
+  <testcase name="givenTerminationSchedulingTimestamp_whenActivationSerialization_thenNoExceptionIsThrown" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.018">
+    <system-out><![CDATA[Activation{action=Action{name='test_annotations', path='guest', version='0.0.1'}, activationId='0b307ee5a1304a57b07ee5a1300a57e7', blocking=true, cause='null', content={$scheduler={start=1669486964914, end=1669486965014}, key1=value1, key2=value2, key0=value0}, initArgs=[], lockedArgs=null, revision='3-b3eeb1e516fd89366574c6051f024fa7', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu', timestamp=1609810319398}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='null', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+]]></system-out>
+  </testcase>
+  <testcase name="whenActivationWithNewInvokerTargetCreated_thenNewInvokerTargetUpdatedCorrectly" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.005"/>
+  <testcase name="isTestHealthActivationSerializedCorrectly" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.006">
+    <error message="class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader &apos;bootstrap&apos;) (through reference chain: it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.Activation[&quot;content&quot;]-&gt;it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest$6[&quot;$scheduler&quot;]-&gt;it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest$5[&quot;start&quot;])" type="com.fasterxml.jackson.databind.JsonMappingException"><![CDATA[com.fasterxml.jackson.databind.JsonMappingException: class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap') (through reference chain: it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.Activation["content"]->it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest$6["$scheduler"]->it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest$5["start"])
+	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:390)
+	at com.fasterxml.jackson.databind.JsonMappingException.wrapWithPath(JsonMappingException.java:349)
+	at com.fasterxml.jackson.databind.ser.std.StdSerializer.wrapAndThrow(StdSerializer.java:316)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFieldsUsing(MapSerializer.java:910)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:762)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:720)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:35)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFields(MapSerializer.java:808)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeWithoutTypeInfo(MapSerializer.java:764)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:720)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serialize(MapSerializer.java:35)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:728)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:770)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:319)
+	at com.fasterxml.jackson.databind.ObjectMapper._writeValueAndClose(ObjectMapper.java:4487)
+	at com.fasterxml.jackson.databind.ObjectMapper.writeValueAsString(ObjectMapper.java:3742)
+	at it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest.isTestHealthActivationSerializedCorrectly(ActivationTest.java:125)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:628)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:117)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:184)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:180)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:127)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:229)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:197)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:211)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:191)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: java.lang.ClassCastException: class java.lang.Long cannot be cast to class java.lang.String (java.lang.Long and java.lang.String are in module java.base of loader 'bootstrap')
+	at com.fasterxml.jackson.databind.ser.std.StringSerializer.serialize(StringSerializer.java:41)
+	at com.fasterxml.jackson.databind.ser.std.MapSerializer.serializeFieldsUsing(MapSerializer.java:905)
+	... 68 more
+]]></error>
+    <system-out><![CDATA[Activation{action=Action{name='invokerHealthTestAction0', path='whisk.system', version='0.0.1'}, activationId='d26e7d5e9c0c4e9dae7d5e9c0c4e9d0c', blocking=false, cause='null', content={$scheduler={start=1669486964934, target=invoker0}}, initArgs=[], lockedArgs={}, revision='null', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='sid_invokerHealth', timestamp=1613230826360}]}, user=User{authKey={api_key=fd8a002b-b945-47d5-8a00-2bb945e7d584:PArwIfsNCvxFfvmZoZFopyy37s62Oi57TKO9Rr2IY1x9GNZIkyyMi6GFEvk6T7Rp}, limits={}, namespace=Namespace{name='whisk.system', uuid='fd8a002b-b945-47d5-8a00-2bb945e7d584'}, rights=[], subject='whisk.system'}, targetInvoker='invoker0', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+]]></system-out>
+  </testcase>
+  <testcase name="whenActivationDeserialization_thenNoExceptionIsThrown" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.006">
+    <system-out><![CDATA[Activation{action=Action{name='test_annotations', path='guest', version='0.0.1'}, activationId='0b307ee5a1304a57b07ee5a1300a57e7', blocking=true, cause='null', content={key0=value0, key1=value1, key2=value2}, initArgs=[], lockedArgs=null, revision='3-b3eeb1e516fd89366574c6051f024fa7', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu', timestamp=1609810319398}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='null', normalize=null, priority=null, timePriority=null, riskPriority=null, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+Activation{action=Action{name='test_annotations', path='guest', version='0.0.1'}, activationId='0b307ee5a1304a57b07ee5a1300a57e7', blocking=true, cause='null', content={key0=value0, key1=value1, key2=value2, $scheduler={target=invoker2, start=1669486964945}}, initArgs=[], lockedArgs=null, revision='3-b3eeb1e516fd89366574c6051f024fa7', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='rxseFbQm3cy0QYASqVGkujB8lxEDE5Mu', timestamp=1609810319398}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker2', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+Activation{action=Action{name='invokerHealthTestAction0', path='whisk.system', version='0.0.1'}, activationId='c87969bfe8cf4c2bb969bfe8cf3c2bf0', blocking=false, cause='null', content={$scheduler={target=invoker0, start=1669486964945}}, initArgs=[], lockedArgs={}, revision='null', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='sid_invokerHealth', timestamp=1611036640735}]}, user=User{authKey={api_key=979552f2-6935-40aa-9552-f2693520aa71:nH3V9vtkRxy8Hcw1a88xHd7jotqefxjH5jTf8v5e1qnWXerfR67vvZyrj3EX9vu4}, limits={}, namespace=Namespace{name='whisk.system', uuid='979552f2-6935-40aa-9552-f2693520aa71'}, rights=[], subject='whisk.system'}, targetInvoker='invoker0', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+Activation{action=Action{name='invokerHealthTestAction0', path='whisk.system', version='0.0.1'}, activationId='568a98b8da0548598a98b8da058859df', blocking=false, cause='null', content=null, initArgs=[], lockedArgs={}, revision='null', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='sid_invokerHealth', timestamp=1612140411000}]}, user=User{authKey={api_key=07784fcd-9cb3-400a-b84f-cd9cb3f00a97:mMHbHXq0fXI3oTI5xQ5c9TtlayzGtxeXU6AEqYcBuZFzJWGUyrarMG8es68NANBW}, limits={}, namespace=Namespace{name='whisk.system', uuid='07784fcd-9cb3-400a-b84f-cd9cb3f00a97'}, rights=[], subject='whisk.system'}, targetInvoker='null', normalize=null, priority=null, timePriority=null, riskPriority=null, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+]]></system-out>
+  </testcase>
+  <testcase name="givenTwoActivationsWhichDiffersForInvokerTarget_thenActivationsAreEquals" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.005">
+    <system-out><![CDATA[Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker0, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker0', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker0, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker0', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker8, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker0', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker9, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker0', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker8, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker8', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+Activation{action=Action{name='fn2', path='guest', version='0.0.1'}, activationId='93a8dd0750934856a8dd0750935856ba', blocking=true, cause='7402792454a04aca82792454a09aca14', content={$scheduler={duration=10, limits={concurrency=3, memory=256, timeout=60000, userMemory=2048}, overload=false, priority=0, target=invoker9, start=1669486964950}, extras={cmd=Sleep executed for 5 s., fn_name=/guest/fn1}, message=Hello Kira!, sleep_time=5}, initArgs=[], lockedArgs={}, revision='1-f5098d6fdb4e59dd7348545470ab110f', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='WSfYUfdxl3hm7HHsmykAp1nrFwGKGC8l', timestamp=1613391003698}, Transaction{id='MDEXs94DFVXmCKZmRgdIFSA7Zcsp2x0j', timestamp=1613391003260}, Transaction{id='R9O0tKt4PnXSUz9Qu97g6thHCSP6jgrw', timestamp=1613390993698}, Transaction{id='fvxblQafi4egIwb6Hw4KWokFLCbZh305', timestamp=1613390988735}, Transaction{id='P8XxEP8sFUs5g9Gf8pykM4SjpGp6AiQA', timestamp=1613390988230}]}, user=User{authKey={api_key=23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP}, limits={}, namespace=Namespace{name='guest', uuid='23bc46b1-71f6-4ed5-8c54-816aa4f8c502'}, rights=[READ, PUT, DELETE, ACTIVATE], subject='guest'}, targetInvoker='invoker9', normalize=0, priority=0, timePriority=1, riskPriority=1, overload=false, kind='null', cmpLength=null, concurrencyLimit=3, memoryLimit=256, timeLimit=60000, userMemory=2048}
+]]></system-out>
+  </testcase>
+  <testcase name="isTestHealthActivationDeserializedCorrectly" classname="it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.ActivationTest" time="0.006">
+    <system-out><![CDATA[{"action":{"name":"invokerHealthTestAction0","path":"whisk.system","version":"0.0.1"},"activationId":"d26e7d5e9c0c4e9dae7d5e9c0c4e9d0c","blocking":false,"content":{"$scheduler":{"target":"invoker0"}},"initArgs":[],"lockedArgs":{},"revision":null,"rootControllerIndex":{"asString":"0","instanceType":"controller"},"transid":["sid_invokerHealth",1613230826360],"user":{"authkey":{"api_key":"fd8a002b-b945-47d5-8a00-2bb945e7d584:PArwIfsNCvxFfvmZoZFopyy37s62Oi57TKO9Rr2IY1x9GNZIkyyMi6GFEvk6T7Rp"},"limits":{},"namespace":{"name":"whisk.system","uuid":"fd8a002b-b945-47d5-8a00-2bb945e7d584"},"rights":[],"subject":"whisk.system"}}
+Activation{action=Action{name='invokerHealthTestAction0', path='whisk.system', version='0.0.1'}, activationId='d26e7d5e9c0c4e9dae7d5e9c0c4e9d0c', blocking=false, cause='null', content={$scheduler={target=invoker0, start=1669486964956}}, initArgs=[], lockedArgs={}, revision='null', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='sid_invokerHealth', timestamp=1613230826360}]}, user=User{authKey={api_key=fd8a002b-b945-47d5-8a00-2bb945e7d584:PArwIfsNCvxFfvmZoZFopyy37s62Oi57TKO9Rr2IY1x9GNZIkyyMi6GFEvk6T7Rp}, limits={}, namespace=Namespace{name='whisk.system', uuid='fd8a002b-b945-47d5-8a00-2bb945e7d584'}, rights=[], subject='whisk.system'}, targetInvoker='invoker0', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+Activation{action=Action{name='invokerHealthTestAction0', path='whisk.system', version='0.0.1'}, activationId='d26e7d5e9c0c4e9dae7d5e9c0c4e9d0c', blocking=false, cause='null', content={$scheduler={start=1669486964958, target=invoker0}}, initArgs=[], lockedArgs={}, revision='null', rootControllerIndex=RootControllerIndex{asString='0', instanceType='controller'}, transId=TransId{transactions=[Transaction{id='sid_invokerHealth', timestamp=1613230826360}]}, user=User{authKey={api_key=fd8a002b-b945-47d5-8a00-2bb945e7d584:PArwIfsNCvxFfvmZoZFopyy37s62Oi57TKO9Rr2IY1x9GNZIkyyMi6GFEvk6T7Rp}, limits={}, namespace=Namespace{name='whisk.system', uuid='fd8a002b-b945-47d5-8a00-2bb945e7d584'}, rights=[], subject='whisk.system'}, targetInvoker='invoker0', normalize=0, priority=1, timePriority=1, riskPriority=1, overload=null, kind='null', cmpLength=null, concurrencyLimit=null, memoryLimit=null, timeLimit=null, userMemory=null}
+]]></system-out>
+  </testcase>
 </testsuite>

@@ -4,7 +4,7 @@ whisk:
     type: NodePort
     # assicurarsi che $ "kubectl describe nodes | grep InternalIP" ritorni 192.168.65.3 
     #  e che la porta 31001 è disponibile
-    apiHostName: 192.168.65.3
+    apiHostName: 192.168.49.2
     apiHostPort: 31001
   # override openwhisk's default limit
   limits:
@@ -43,6 +43,9 @@ nginx:
   httpsNodePort: 31001
 
 invoker:
+  imageName: "njaveed/ow-invoker"
+  imageTag: "latest"
+  imagePullPolicy: "IfNotPresent"
   # to enable conucurrency (see@ https://github.com/apache/openwhisk/blob/master/docs/concurrency.md)
   containerFactory:
     enableConcurrency: true
@@ -66,20 +69,21 @@ metrics:
 # modified controller to manage priority queue
 # controller's load balancer will send activation to 'to_dispatch' topic instead of 'invokerN'
 controller:
-  imageName: "alfredo94/ow-controller"
-  imageTag: "0.0.12"
+  imageName: "njaveed/ow-controller"
+  imageTag: "latest"
+  imagePullPolicy: "IfNotPresent"
 
 # Priority queue scheduler
 scheduler:
   external: false
-  imageName: "alfredo94/ow-scheduler"
-  imageTag: "0.0.16"
+  imageName: "njaveed/ow-scheduler"
+  imageTag: "latest"
   imagePullPolicy: "IfNotPresent"
   replicaCount: 1
   restartPolicy: "Always"
   host: null
   # policy: pass_through
-  policy: priority_queue_fifo
+  policy: pass_through
   tracing: false
   buffering: true
   pollIntervalMs: "50"

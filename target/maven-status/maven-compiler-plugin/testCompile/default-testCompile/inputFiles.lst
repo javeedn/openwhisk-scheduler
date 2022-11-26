@@ -1,6 +1,7 @@
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/RunningCompositionSchedulerMock.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/policy/PriorityQueueFIFIPolicyTest.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/ActivationTest.java
+/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/policy/WeightedShortestJobFirstTest.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/advanced/RunningCompositionSchedulerTest.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/scheduler/InvokerTest.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/java/it/uniroma2/faas/openwhisk/scheduler/data/source/domain/mock/EventKafkaConsumerMock.java

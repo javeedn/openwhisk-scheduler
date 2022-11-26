@@ -11,7 +11,8 @@ public enum Policy {
 
     PASS_THROUGH,
     PRIORITY_QUEUE_FIFO,
-    SHORTEST_JOB_FIRST;
+    SHORTEST_JOB_FIRST,
+    WEIGHTED_SHORTEST_JOB_FIRST;
 
     public static @Nonnull Policy from(@Nonnull String policy) {
         checkNotNull(policy, "Policy can not be null.");

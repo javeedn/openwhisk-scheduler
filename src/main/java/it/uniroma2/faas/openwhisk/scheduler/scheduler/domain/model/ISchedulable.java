@@ -21,11 +21,32 @@ public interface ISchedulable extends IConsumable {
     @Nonnull String getActivationId();
 
     /**
-     * Retrieve {@link ISchedulable} priority level.
+     * Retrieve {@link ISchedulable} value normalize check.
+     *
+     * @return integer representing check normalization.
+     */
+    @Nullable Integer getNormalize();
+
+    /**
+     * Retrieve {@link ISchedulable} value priority level.
+     *
+     * @return integer representing value priority level.
+     */
+    @Nullable Integer getPriority();
+
+    /**
+     * Retrieve {@link ISchedulable} time priority level.
      *
      * @return integer representing priority level.
      */
-    @Nullable Integer getPriority();
+    @Nullable Integer getTimePriority();
+
+    /**
+     * Retrieve {@link ISchedulable} risk/opportunity priority level.
+     *
+     * @return integer representing risk/opportunity priority level.
+     */
+    @Nullable Integer getRiskPriority();
 
     /**
      * Retrieve {@link ISchedulable} target invoker.

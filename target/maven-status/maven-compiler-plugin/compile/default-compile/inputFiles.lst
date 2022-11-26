@@ -19,6 +19,7 @@
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/data/source/IConsumer.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/data/source/remote/producer/kafka/AbstractKafkaProducer.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/Action.java
+/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/util/DeNormalize.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/InvokerInstance.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/deserializer/TransIdDeserializer.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/advanced/TracerScheduler.java
@@ -47,6 +48,7 @@
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/config/Config.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/model/TransId.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/util/SchedulerPeriodicExecutors.java
+/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/policy/WeightedShortestJobFirst.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/SchedulerComponent.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/policy/ShortestJobFirst.java
 /Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/main/java/it/uniroma2/faas/openwhisk/scheduler/scheduler/domain/scheduler/IBufferizable.java

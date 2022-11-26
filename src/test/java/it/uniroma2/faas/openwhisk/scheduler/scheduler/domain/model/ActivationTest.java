@@ -264,7 +264,7 @@ public class ActivationTest {
         final Activation toTestActivation = objectMapper.readValue(recordToTest, Activation.class);
         final String testHealthRecord = "{\"action\":{\"name\":\"invokerHealthTestAction0\",\"path\":\"whisk.system\",\"version\":\"0.0.1\"},\"activationId\":\"568a98b8da0548598a98b8da058859df\",\"blocking\":false,\"initArgs\":[],\"lockedArgs\":{},\"revision\":null,\"rootControllerIndex\":{\"asString\":\"0\",\"instanceType\":\"controller\"},\"transid\":[\"sid_invokerHealth\",1612140411000],\"user\":{\"authkey\":{\"api_key\":\"07784fcd-9cb3-400a-b84f-cd9cb3f00a97:mMHbHXq0fXI3oTI5xQ5c9TtlayzGtxeXU6AEqYcBuZFzJWGUyrarMG8es68NANBW\"},\"limits\":{},\"namespace\":{\"name\":\"whisk.system\",\"uuid\":\"07784fcd-9cb3-400a-b84f-cd9cb3f00a97\"},\"rights\":[],\"subject\":\"whisk.system\"}}";
         final Activation testHealthActivation = objectMapper.readValue(testHealthRecord, Activation.class);
-
+        assertDoesNotThrow(() -> System.out.println(objectMapper.writeValueAsString(activationRecord.with(0))));
         assertDoesNotThrow(() -> System.out.println(objectMapper.writeValueAsString(activationRecord.with(0))));
         assertDoesNotThrow(() -> System.out.println(objectMapper.writeValueAsString(activationPriority.with(0))));
         assertDoesNotThrow(() -> System.out.println(objectMapper.writeValueAsString(toTestActivation.with(0))));

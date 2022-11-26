@@ -1,4 +1,6 @@
 -------------------------------------------------------------------------------
 Test set: it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.PriorityQueueFIFIPolicyTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.PriorityQueueFIFIPolicyTest
+it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.PriorityQueueFIFIPolicyTest.isPriorityQueueFIFIPolicySortingCorrectly  Time elapsed: 0.029 s
+it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.PriorityQueueFIFIPolicyTest.areActivationWithoutPriorityProcessedCorrectly  Time elapsed: 0.005 s

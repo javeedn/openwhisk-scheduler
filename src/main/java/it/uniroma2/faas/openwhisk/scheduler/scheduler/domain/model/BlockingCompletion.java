@@ -70,6 +70,8 @@ public final class BlockingCompletion extends Completion {
      *           },
      *           "scheduler": {
      *             "priority": 0,
+     *             "timePriority": 1,
+     *             "riskPriority": 5,
      *             "target": "invoker0"
      *           },
      *           "sleep": 1
@@ -157,6 +159,8 @@ public final class BlockingCompletion extends Completion {
      *             },
      *             "overload": false,
      *             "priority": 0,
+     *             "timePriority": 1,
+     *             "riskPriority": 5,
      *             "target": "invoker0"
      *           },
      *           "sleep_time": 5,

@@ -1,4 +1,6 @@
 -------------------------------------------------------------------------------
 Test set: it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.EventTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.EventTest
+it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.EventTest.isEventDeserializedCorrectly  Time elapsed: 0.052 s
+it.uniroma2.faas.openwhisk.scheduler.scheduler.domain.model.EventTest.whenEventDeserialized_thenIsOfCorrectType  Time elapsed: 0.003 s

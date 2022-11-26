@@ -21,8 +21,7 @@ public class TracerSchedulerTest {
 
     @Test
     public void areActivationsTracedCorrectly() throws IOException {
-         final String filename = "/Volumes/Data/Projects/FaaS/OpenWhisk/openwhisk-scheduler/src/test/res/tracer_scheduler/scheduler_compositions.txt";
-//        final String filename = "/Volumes/Data/Projects/FaaS/OpenWhisk/openwhisk-scheduler/benchmark/18/data/scheduler.txt";
+        final String filename = "/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/res/tracer_scheduler/scheduler_compositions.txt";
         final ObjectMapper objectMapper = new ObjectMapper();
         final Collection<Activation> activations;
 

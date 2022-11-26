@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+Test set: it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.WeightedShortestJobFirstTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s - in it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.WeightedShortestJobFirstTest
+it.uniroma2.faas.openwhisk.scheduler.scheduler.policy.WeightedShortestJobFirstTest.givenInputCollection_thenPolicySortCorrectly  Time elapsed: 0.029 s

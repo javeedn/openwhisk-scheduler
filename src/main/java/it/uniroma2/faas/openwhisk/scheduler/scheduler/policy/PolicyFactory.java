@@ -18,6 +18,9 @@ public class PolicyFactory {
 
             case SHORTEST_JOB_FIRST:
                 return new ShortestJobFirst();
+            
+            case WEIGHTED_SHORTEST_JOB_FIRST:
+                return new WeightedShortestJobFirst();
 
             default:
                 throw new TypeNotPresentException(policy.name(), new Throwable("Selected policy not yet implemented."));

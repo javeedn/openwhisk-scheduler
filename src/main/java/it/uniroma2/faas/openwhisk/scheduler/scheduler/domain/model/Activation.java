@@ -70,7 +70,10 @@ public final class Activation implements ITraceable, IBufferizable {
      *     "key2": "value2",
      *     "$scheduler": {
      *       "target": "invoker0",
-     *       "priority": 0
+     *       "normalize": 1,
+     *       "priority": 0,
+     *       "timePriority": 1,
+     *       "riskPriority": 5
      *     }
      *   },
      *   "initArgs": [],
@@ -211,7 +214,10 @@ public final class Activation implements ITraceable, IBufferizable {
     public static final String K_SCHEDULER_START = "start";
     public static final String K_SCHEDULER_END = "end";
     public static final String K_SCHEDULER_TARGET = "target";
+    public static final String K_SCHEDULER_NORMALIZE = "normalize";
     public static final String K_SCHEDULER_PRIORITY = "priority";
+    public static final String K_SCHEDULER_TIME_PRIORITY = "timePriority";
+    public static final String K_SCHEDULER_RISK_PRIORITY = "riskPriority";
     public static final String K_SCHEDULER_OVERLOAD = "overload";
     public static final String K_SCHEDULER_KIND = "kind";
     public static final String K_SCHEDULER_CMP_LENGTH = "cmpLength";
@@ -235,8 +241,14 @@ public final class Activation implements ITraceable, IBufferizable {
 
     // this value will be the topic name where activation will be sent
     private final String targetInvoker;
+    // this value will be set by user to tweak normalization of priority scores
+    private final Integer normalize;
     // using Integer priority, there is not an upper bound to max priority
     private final Integer priority;
+    // using Integer time priority, there is not an upper bound to max priority
+    private final Integer timePriority;
+    // using Integer risk priority, there is not an upper bound to max priority
+    private final Integer riskPriority;
     // indicate invoker overloading
     private final Boolean overload;
     // action runtime description
@@ -270,7 +282,10 @@ public final class Activation implements ITraceable, IBufferizable {
         this.user = user;
 
         String targetInvoker = null;
+        Integer normalize = null;
         Integer priority = null;
+        Integer timePriority = null;
+        Integer riskPriority = null;
         Boolean overload = null;
         String kind = null;
         Integer cmpLength = null;
@@ -288,11 +303,26 @@ public final class Activation implements ITraceable, IBufferizable {
                 if (!scheduler.containsKey(K_SCHEDULER_START))
                     scheduler.put(K_SCHEDULER_START, Instant.now().toEpochMilli());
                 targetInvoker = (String) scheduler.get(K_SCHEDULER_TARGET);
+                Number normalizeNumber = (Number) scheduler.get(K_SCHEDULER_NORMALIZE);
+                if (normalizeNumber != null)
+                    normalize = normalizeNumber.intValue();
+                else
+                    normalize = 0;
                 Number priorityNumber = (Number) scheduler.get(K_SCHEDULER_PRIORITY);
                 if (priorityNumber != null)
                     priority = priorityNumber.intValue();
                 else
                     priority = DEFAULT_PRIORITY;
+                Number timePriorityNumber = (Number) scheduler.get(K_SCHEDULER_TIME_PRIORITY);
+                if (timePriorityNumber != null)
+                    timePriority = timePriorityNumber.intValue();
+                else
+                    timePriority = DEFAULT_PRIORITY;
+                Number riskPriorityNumber = (Number) scheduler.get(K_SCHEDULER_RISK_PRIORITY);
+                if (riskPriorityNumber != null)
+                    riskPriority = riskPriorityNumber.intValue();
+                else
+                    riskPriority = DEFAULT_PRIORITY;
                 overload = (Boolean) scheduler.get(K_SCHEDULER_OVERLOAD);
                 kind = (String) scheduler.get(K_SCHEDULER_KIND);
                 Number cmpLengthNumber = (Number) scheduler.get(K_SCHEDULER_CMP_LENGTH);
@@ -311,7 +341,10 @@ public final class Activation implements ITraceable, IBufferizable {
             }
         }
         this.targetInvoker = targetInvoker;
+        this.normalize = normalize;
         this.priority = priority;
+        this.timePriority = timePriority;
+        this.riskPriority = riskPriority;
         this.overload = overload;
         this.kind = kind;
         this.cmpLength = cmpLength;
@@ -327,6 +360,8 @@ public final class Activation implements ITraceable, IBufferizable {
     @Override
     public @Nonnull Activation with(int priority) {
         checkArgument(priority >= 0, "Priority must be >= 0.");
+        checkArgument(timePriority >= 0, "TimePriority must be >= 0.");
+        checkArgument(riskPriority >= 0, "RiskPriority must be >= 0.");
 
         Map<String, Object> content;
         if (this.content == null) {
@@ -336,7 +371,10 @@ public final class Activation implements ITraceable, IBufferizable {
         }
         content.putIfAbsent(K_SCHEDULER, new HashMap<>());
         final Map<String, Object> scheduler = (Map<String, Object>) content.get(K_SCHEDULER);
+        scheduler.put(K_SCHEDULER_NORMALIZE, normalize);
         scheduler.put(K_SCHEDULER_PRIORITY, priority);
+        scheduler.put(K_SCHEDULER_TIME_PRIORITY, timePriority);
+        scheduler.put(K_SCHEDULER_RISK_PRIORITY, riskPriority);
 
         return new Activation(
                 this.getAction(), this.getActivationId(),
@@ -483,8 +521,26 @@ public final class Activation implements ITraceable, IBufferizable {
 
     @JsonIgnore
     @Override
+    public @Nullable Integer getNormalize() {
+        return normalize;
+    }
+
+    @JsonIgnore
+    @Override
     public @Nullable Integer getPriority() {
         return priority;
+    }
+
+    @JsonIgnore
+    @Override
+    public @Nullable Integer getTimePriority() {
+        return timePriority;
+    }
+
+    @JsonIgnore
+    @Override
+    public @Nullable Integer getRiskPriority() {
+        return riskPriority;
     }
 
     @JsonIgnore
@@ -557,7 +613,10 @@ public final class Activation implements ITraceable, IBufferizable {
                 ", transId=" + transId +
                 ", user=" + user +
                 ", targetInvoker='" + targetInvoker + '\'' +
+                ", normalize=" + normalize +
                 ", priority=" + priority +
+                ", timePriority=" + timePriority +
+                ", riskPriority=" + riskPriority +
                 ", overload=" + overload +
                 ", kind='" + kind + '\'' +
                 ", cmpLength=" + cmpLength +

@@ -42,7 +42,7 @@ public class CompletionTest {
 
     @Test
     public void isSchedulerDurationAlwaysLowerEqualThanWaitTime() throws IOException {
-        final String filename = "/Volumes/Data/Projects/FaaS/OpenWhisk/openwhisk-scheduler/src/test/res/domain/completed0.txt";
+        final String filename = "/Users/njaveed/Documents/IIITG_DOCS/Project/openwhisk-scheduler/src/test/res/domain/completed0.txt";
         final ObjectMapper objectMapper = new ObjectMapper();
         final Collection<BlockingCompletion> completions;
 
@@ -68,6 +68,7 @@ public class CompletionTest {
                 )
                 .filter(Objects::nonNull)
                 .collect(toList());
+        System.out.println(completions);
         final List<Integer> schedulerDurationCompletions = completions.stream()
                 .map(completion -> completion.getResponse().getResult().getResult().get("$scheduler"))
                 .map(scheduler -> ((Map<String, Integer>) scheduler).get("duration"))

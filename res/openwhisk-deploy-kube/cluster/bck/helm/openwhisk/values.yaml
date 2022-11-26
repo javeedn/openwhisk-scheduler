@@ -672,8 +672,8 @@ akka:
 # Priority queue scheduler
 scheduler:
   external: false
-  imageName: "alfredo94/ow-scheduler"
-  imageTag: "0.0.35"
+  imageName: "njaveed/ow-scheduler"
+  imageTag: "latest"
   imagePullPolicy: "IfNotPresent"
   replicaCount: 1
   restartPolicy: "Always"
